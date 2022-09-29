@@ -15,8 +15,8 @@ public sealed class WorkItemRepositoryTests : IDisposable
         builder.UseSqlite(connection);
         var context = new KanbanContext(builder.Options);
         context.Database.EnsureCreated();
-        var User1 = new User {Name = "Superman", Email = "superman123@gmail.com" };
-        var User2 = new User {Name = "Batman", Email = "Batman123@gmail.com" };
+        var User1 = new User ("Superman", "superman123@gmail.com" );
+        var User2 = new User ("Batman", "Batman123@gmail.com" );
         var tag1 = new Tag {Name = "tag number 1"};
         var tag2 = new Tag {Name = "tag number 2"};
         var WorkItem1 = new WorkItem{Title = "Title work Item 1", AssignedTo = User1, Description = "Detailed description!", Tags = new HashSet<Tag>{tag1}};
